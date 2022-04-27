@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  font-size: 4px; //1 rem = 4px; 4px/16px = 25% (In Browser)
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  height: auto;
+}
+
+.table-container {
+  display: block;
+  height: 600px;
+  overflow-y: auto;
+  border-top: 8px solid rgb(128, 0, 0);
+  width: 95%;
+  margin: 10rem auto;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 4rem;
+  width: 100%;
+  box-shadow: 0px 2px 6px 1px #B26757;
+  border-radius: 4px;
+  text-align: left;
+
+  &__head {
+    .table-row {
+      text-align: inherit;
+      &__cell {
+        position: sticky;
+        top: -1px;
+        background-color: #B26757;
+        padding: 4rem 5rem;
+        &:last-of-type {
+          border-bottom: none;
+        }
+        .cell-direction{
+          display: flex;
+          cursor: pointer;
+          svg {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+  &__body{
+    .table-row {
+      border-bottom: 1px solid #B26757;
+      text-align: inherit;
+      height: 14rem;
+      &:hover {
+        background-color: #B29557;
+      }
+      &__cell {
+        padding: 4rem 5rem;
+      }
+      .promo-name {
+        color: rgb(236, 98, 33);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.checkbox {
+  display: inline;
+  &__container {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      .checkbox-input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+
+     
+
+      .checkbox-label {
+          font-size: 3.5rem;
+          padding-left: 8rem;
+      }
+
+      
+
+          &::after {
+              content: '';
+              position: absolute;
+              display: none;
+              left: 0.5rem;
+              width: 1.5rem;
+              height: 3rem;
+              border: solid rgb(95, 140, 190);
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+          }
+      
+  }
+}
